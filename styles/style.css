@@ -1,0 +1,132 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: Verdana;
+}
+
+header {
+	background-color: #f3f3f3;
+	border-bottom: 1px solid #ccc;
+	box-shadow: inset -1px -1px 5px rgba(0, 0, 0, 0.1);
+	margin-bottom: 10px;
+	text-align: center;
+	height: 40px;
+}
+
+#options {
+	text-decoration: none;
+	color: #333;
+	background-image: url('../images/tools.png');
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 20px;
+}
+
+#filter {
+	position: absolute;
+	top: 40px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 300px;
+	padding: 20px 25px;
+	border: 1px solid #ccc;
+	border-top: none;
+	background-color: #fefefe;
+	text-align: left;
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2 );
+}
+
+#filter p {
+	margin-bottom: 1em;
+}
+
+#filter select {
+	width: 100%;
+	padding: 3px 5px;
+	border: 1px solid #ccc;
+	margin: 3px 0px 10px 0px;
+}
+
+#filter a.button {
+	position: relative;
+	text-decoration: none;
+	color: #fff;
+	font-size: 0.8em;
+	padding: 5px 8px 5px 20px;
+	border-radius: 10px;
+}
+
+#filter a.button:hover {
+	box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.2), 1px 1px 1px rgba(0, 0, 0, 0.3);
+	text-shadow: 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+#filter a#apply {
+	background-color: rgb(56, 158, 40);
+}
+
+#filter a#apply:before,
+#filter a#apply:after {
+	content: " ";
+	position: absolute;
+}
+
+#filter a#apply:after {
+	content: " ";
+	border: 3px solid;
+	border-right: none;
+	border-top: none;
+	
+	width: 9px;
+	height: 4px;
+	top: 8px;
+	left: 4px;
+	transform:rotate(-45deg);
+	-ms-transform:rotate(-45deg); /* IE 9 */
+	-webkit-transform:rotate(-45deg); /* Safari and Chrome */
+}
+
+#filter a#close {
+	background-color: rgb(169, 0, 0);
+	float: right;
+}
+
+#filter a#close:before {
+	content: "X";
+	position: absolute;
+	top: 3px;
+	left: 4px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#filter-matrix {
+	margin: 5px auto;
+}
+
+#filter-matrix span {
+	padding: 3px;
+	font-style: italic;
+}
+
+#images {
+	padding: 0px 30px;
+}
+
+#images .image h3 {
+	margin-bottom: 5px;
+}
+
+#images .image:first-child {
+	float: left;
+}
+#images .image:last-child {
+	float: right;
+}
+
+#images canvas {
+	padding: 10px;
+	border: 1px double #ccc;
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
