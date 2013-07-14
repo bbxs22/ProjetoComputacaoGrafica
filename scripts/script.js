@@ -76,10 +76,10 @@ var Filter = function(name, values, borderEffect) {
             }
         }
         
-        color.red /= this.size;
-        color.green /= this.size;
-        color.blue /= this.size;
-        //color.alpha /= this.size;
+		color.red = Math.max(color.red, 0);
+		color.green = Math.max(color.green, 0);
+		color.blue = Math.max(color.blue, 0);
+		
         color.alpha = 255;
         
         return color;

@@ -1,15 +1,18 @@
 var Filters = Filters || {};
-Filters.nothing = new Filter('Nothing', [[0, 0, 0], [0, 9, 0], [0, 0, 0]], BorderEffect.null);
+Filters.nothing = new Filter('Nothing', [[0, 0, 0], [0, 1, 0], [0, 0, 0]], BorderEffect.null);
 Filters.erase = new Filter('Eraser', [[0, 0, 0], [0, 0, 0], [0, 0, 0]], BorderEffect.reflection);
-Filters.box = new Filter('Box', [[1, 1, 1], [1, 1, 1], [1, 1, 1]], BorderEffect.periodic);
+Filters.box = new Filter('Box', [[1/9, 1/9, 1/9], [1/9, 1/9, 1/9], [1/9, 1/9, 1/9]], BorderEffect.periodic);
+Filters.gauss2 = new Filter('Gauss2', [[1/16, 2/16, 1/16], [2/16, 4/16, 2/16], [1/16, 2/16, 1/16]], BorderEffect.null);
+Filters.gauss3 = new Filter('Gauss3', [[1/64, 3/64, 3/64, 1/64], [3/64, 9/64, 9/64, 3/64], [3/64, 9/64, 9/64, 3/64], [1/64, 3/64, 3/64, 1/64]], BorderEffect.null);
+Filters.gauss4 = new Filter('Gauss4', [[1/256, 4/256, 6/256, 4/256, 1/256], [4/256, 16/256, 24/256, 16/256, 4/256], [6/256, 24/256, 36/256, 24/256, 6/256], [4/256, 16/256, 24/256, 16/256, 4/256], [1/256, 4/256, 6/256, 4/256, 1/256]], BorderEffect.null);
 
 //BorderEffect.nothing
 //BorderEffect.null
 //BorderEffect.reflection
 //BorderEffect.periodic
 
-var defaultCanvas = new Canvas('default-image', 512, 512);
-var resultCanvas = new Canvas('result-image', 512, 512);
+var defaultCanvas = new Canvas('default-image', 128, 128);
+var resultCanvas = new Canvas('result-image', 128, 128);
 
 function prepareMatrix() {
     var filter = Filters[$('#filters').val()];
@@ -27,7 +30,7 @@ function prepareMatrix() {
 };
 
 $(document).ready(function(){
-    defaultCanvas.prepare('images/lenna.png');
+    defaultCanvas.prepare('images/lenna128.png');
     resultCanvas.prepare();
     
     for (key in Filters) {
